@@ -8,5 +8,8 @@ export default {
     plugins: [
         wasm(),
         topLevelAwait()
-      ]
+    ],
+    build: {
+        outDir: '../dist'
+    }
 }
