@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Amatic SC', cursive;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.overlay {
+    opacity: 1;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+
+.overlay.fade {
+    opacity: 0;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: transparent;
+    font-family: 'Amatic SC', serif;
+    font-size: 2rem;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.loading.fade {
+    opacity: 0;
+}
+
+.start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-size: 4rem;
+    font-family: 'Amatic SC', serif;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: none;
+}
+
+.start.fadeIn {
+    opacity: 1;
+}
+
+.start.fadeOut {
+    opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .start:hover {
+        color: #9effe7;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.modal.fadeIn {
+    opacity: 1;
+    display: block;
+}
+
+.modal.fadeOut {
+    opacity: 0;
+}
+
+.modal-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 35rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(30px);
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    overflow: hidden;
+    color: white;
+}
+
+.modal-description {
+    text-align: left;
+}
+
+.close {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(30px);
+    color: #000000;
+    /* Set the color of the button text to white */
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s all;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+}
+
+.close:hover,
+.close:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.modal h1,
+.modal p {
+    margin: 0 0 15px 0;
+}
+
+.modal h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.modal p {
+    font-weight: 300;
+}
+
+@keyframes slideLeftToRight {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideRightToLeft {
+    0% {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.modal-content h1, .modal-content p {
+    opacity: 0;
+}
+
+.modal-content h1 {
+    animation: slideLeftToRight 0.5s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.modal-content p {
+    animation: slideRightToLeft 0.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.highlight {
+    font-size: 2.5em;
+    color: #212020;
+    font-weight: bold;
+    display: block;
+}
+.text {
+    font-size: 1.2em;
+    color: #282828;
+    font-weight: 300;
+    display: block;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+
+}
+
+.social-icons a {
+    margin: 20px 10px;
+    color: #000000;
+    font-size: 2em;
+}
+
+.social-icons a:hover {
+    color: #002be1;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 300px;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.project {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.project h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.project p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #282828;
+}
+
+.project-links {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-links a {
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #000000;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.contact-text {
+    font-size: 1.2em;
+    color: #282828;
+    font-weight: 300;
+    display: block;
+    text-align: center;
+}
