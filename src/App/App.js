@@ -9,6 +9,7 @@ import Preloader from './UI/Preloader.js'
 import InputController from './UI/InputController.js'
 import GUI from "./Utils/GUI.js";
 import ModalManager from "./UI/ModalManager.js";
+import SoundManager from "./Utils/SoundManager.js";
 
 let instance = null
 
@@ -40,6 +41,11 @@ export default class App{
         // Camera and Renderer
         this.camera = new Camera()
         this.renderer = new Renderer()
+
+        // Sound Manager
+        this.soundManager = new SoundManager();
+        this.soundManager.loadSound('portalOpen', 'sounds/portal-open.mp3');
+        this.soundManager.loadSound('footStep', 'sounds/footsteps.mp3');
 
         // extra utils
         this.loop = new Loop()

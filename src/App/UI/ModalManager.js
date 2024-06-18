@@ -3,16 +3,16 @@ export default class ModalManager {
         this.modal = document.getElementById("myModal");
         this.close = document.getElementsByClassName("close")[0];
         this.close.onclick = () => {
-            this.closeModal()
-        }
+            this.closeModal();
+        };
     }
 
     openModal(title, description) {
         document.getElementById("modalTitle").innerHTML = title;
         document.getElementById("modalDescription").innerHTML = description;
-        this.modal.style.display = "block";
         this.modal.classList.remove('fadeOut');
         this.modal.classList.add('fadeIn');
+        this.modal.style.display = "block";
     }
 
     closeModal() {
@@ -22,5 +22,4 @@ export default class ModalManager {
             this.modal.style.display = "none";
         }, 600);
     }
-
 }

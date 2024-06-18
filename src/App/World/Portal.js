@@ -42,11 +42,13 @@ export default class Portal {
                 this.modalManager.openModal(this.modalInfo.title, this.modalInfo.description)
                 this.portalMesh.material = this.portalNearMaterial;
                 this.prevIsNear = true
+                this.app.soundManager.playSound('portalOpen');
             } else {
                 if (!this.prevIsNear) return
                 this.modalManager.closeModal()
                 this.portalMesh.material = this.portalFarMaterial;
                 this.prevIsNear = false
+                this.app.soundManager.stopSound('portalOpen');
             }
         }
     }

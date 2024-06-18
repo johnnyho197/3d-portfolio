@@ -34,28 +34,58 @@ body {
     color: white;
     background-color: transparent;
     font-family: 'Amatic SC', serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     opacity: 1;
     transition: opacity 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .loading.fade {
     opacity: 0;
 }
 
+.loader,
+.loader:before,
+.loader:after{
+    width: 35px;
+    aspect-ratio: 1;
+    box-shadow: 0 0 0 3px inset #fff;
+    position: relative;
+    animation: l6 1.5s infinite 0.5s;
+}
+.loader:before,
+.loader:after{
+    content: "";
+    position: absolute;
+    left: calc(100% + 5px);
+    animation-delay: 1s;
+}
+.loader:after{
+    left: -40px;
+    animation-delay: 0s;
+}
+@keyframes l6 {
+    0%,55%,100%  {border-radius:0  }
+    20%,30%      {border-radius:50%}
+}
+
+
 .start {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) skew(-20deg);
     border: none;
     color: white;
     background-color: transparent;
-    font-size: 4rem;
+    font-size: 6rem;
     font-family: 'Amatic SC', serif;
     opacity: 0;
     transition: opacity 0.5s;
     display: none;
+    cursor: pointer;
 }
 
 .start.fadeIn {
@@ -69,6 +99,7 @@ body {
 @media (hover: hover) and (pointer: fine) {
     .start:hover {
         color: #9effe7;
+        scale: 1.1;
     }
 }
 
@@ -83,13 +114,33 @@ body {
     transition: opacity 0.6s ease;
 }
 
+@keyframes zoomIn {
+    from {
+        transform: scale(0.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.1);
+    }
+}
+
 .modal.fadeIn {
     opacity: 1;
     display: block;
+    animation: zoomIn 0.3s forwards;
 }
 
 .modal.fadeOut {
     opacity: 0;
+    animation: zoomOut 0.3s forwards;
 }
 
 .modal-wrapper {
@@ -104,7 +155,7 @@ body {
 
 .modal-content {
     background-color: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
     padding: 20px;
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;

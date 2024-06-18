@@ -8,7 +8,6 @@ export default class Character {
     this.scene = this.app.scene;
     this.assetStore = assetStore.getState();
     this.avatar = this.assetStore.loadedAssets.avatar;
-    console.log(this.avatar)
 
     // create character and add to scene
     const geometry = new THREE.BoxGeometry(0.6, 2, 0.6);

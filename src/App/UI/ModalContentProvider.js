@@ -14,7 +14,7 @@ export default class ModalContentProvider {
         this.projects = [
             {
                 title: "Smart Brain",
-                desc: "A website which detects faces from a URL image input of the user. Handled face detection API calls by utilizing Clarifai Face Detection Model",
+                desc: "A website which detects faces from a URL images input of the user. Handled face detection API calls by utilizing Clarifai Face Detection Model",
                 live: "https://smart-brain-huuho.netlify.app/",
                 code: "https://github.com/johnnyho197/smart-brain",
             },
@@ -36,7 +36,7 @@ export default class ModalContentProvider {
     getModalInfo(portalName) {
         const content = this.modalContents[portalName];
         if (portalName === 'aboutMe') {
-            content.description = `<div class="avatar-container"><img src="my-avatar.jpg" alt="Avatar" class="avatar"></div>`;
+            content.description = `<div class="avatar-container"><img src="/images/my-avatar.jpg" alt="Avatar" class="avatar"></div>`;
             content.description += `<span class="highlight">Hi! I'm Huu Thien Ho,</span>`;
             content.description += `<span class="text"> a dedicated and innovative software engineer with a strong foundation in front-end and back-end development, passionate about creating exceptional user experiences.</span>`
             content.description += `<div class="social-icons">
