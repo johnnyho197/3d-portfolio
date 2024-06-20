@@ -134,7 +134,6 @@ body {
 
 .modal.fadeIn {
     opacity: 1;
-    display: block;
     animation: zoomIn 0.3s forwards;
 }
 

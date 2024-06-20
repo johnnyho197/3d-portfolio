@@ -7,7 +7,7 @@ export default class Portal {
         this.app = new App();
         this.modalInfo = modalInfo;
         this.portalMesh = portalMesh;
-        this.modalManager = new ModalManager();
+        this.modalManager = this.app.modalManager;
 
         this.portalNearMaterial = new THREE.MeshBasicMaterial({
             color: 0xffffff,

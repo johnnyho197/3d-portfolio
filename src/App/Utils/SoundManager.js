@@ -16,7 +16,12 @@ export default class SoundManager {
         audioLoader.load(filePath, (buffer) => {
             sound.setBuffer(buffer);
             sound.setLoop(false);
-            sound.setVolume(0.5);
+            if (name === 'footStep'){
+                sound.setVolume(1);
+            } else {
+                sound.setVolume(0.5);
+            }
+
             this.sounds[name] = sound;
         });
     }
@@ -27,5 +32,9 @@ export default class SoundManager {
 
     stopSound(name) {
         this.sounds[name].stop();
+    }
+
+    isPlaying(name) {
+        return this.sounds[name].isPlaying;
     }
 }

@@ -37,6 +37,7 @@ export default class AnimationController {
     onInput(input) {
         if (input.forward || input.backward || input.left || input.right) {
             this.playAnimation('run');
+            if (this.app.soundManager.isPlaying('footStep')) return;
             this.app.soundManager.playSound('footStep');
         } else {
             this.playAnimation('idle')
