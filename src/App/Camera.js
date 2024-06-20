@@ -52,7 +52,7 @@ export default class Camera{
             const characterPosition = this.characterController.translation()
             const characterRotation = this.characterController.rotation()
 
-            const cameraOffset = new THREE.Vector3(0, 30, 20)
+            const cameraOffset = new THREE.Vector3(0, 20, 15)
             cameraOffset.applyQuaternion(characterRotation)
             cameraOffset.add(characterPosition)
 
