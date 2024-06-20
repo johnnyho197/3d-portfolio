@@ -9,6 +9,10 @@ const assetsToLoad = [
         id: 'environment',
         path:'/models/environment.glb',
         type: 'model',
+    }, {
+        id: 'switch',
+        path:'/models/switchCase.glb',
+        type: 'model',
     }
 ];
 
